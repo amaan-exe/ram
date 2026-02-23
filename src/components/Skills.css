@@ -1,0 +1,135 @@
+.skills__grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+}
+
+.skills__category {
+    padding: 32px;
+    position: relative;
+    overflow: hidden;
+}
+
+.skills__category-glow {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    opacity: 0.5;
+    transition: opacity var(--transition-normal);
+}
+
+.skills__category:hover .skills__category-glow {
+    opacity: 1;
+    box-shadow: 0 0 20px currentColor;
+}
+
+.skills__category-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 24px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid var(--border-glass);
+}
+
+.skills__category-icon {
+    font-size: 1.4rem;
+}
+
+.skills__category-title {
+    font-family: var(--font-display);
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    flex: 1;
+}
+
+.skills__category-count {
+    font-size: 0.72rem;
+    color: var(--text-muted);
+    padding: 3px 10px;
+    background: var(--bg-glass);
+    border-radius: var(--radius-full);
+    font-family: var(--font-code);
+}
+
+.skills__list {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.skills__item {
+    cursor: default;
+}
+
+.skills__item-info {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 6px;
+}
+
+.skills__icon {
+    font-size: 1.2rem;
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+}
+
+.skills__name {
+    font-size: 0.88rem;
+    font-weight: 500;
+    color: var(--text-secondary);
+    flex: 1;
+    transition: color var(--transition-normal);
+}
+
+.skills__item:hover .skills__name {
+    color: var(--text-primary);
+}
+
+.skills__level-text {
+    font-family: var(--font-code);
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    min-width: 32px;
+    text-align: right;
+}
+
+.skills__progress-bar {
+    height: 4px;
+    background: rgba(255, 255, 255, 0.04);
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.skills__progress-fill {
+    height: 100%;
+    border-radius: 4px;
+    position: relative;
+}
+
+.skills__progress-fill::after {
+    content: '';
+    position: absolute;
+    right: 0;
+    top: -1px;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: inherit;
+    box-shadow: 0 0 8px currentColor;
+}
+
+@media (max-width: 768px) {
+    .skills__grid {
+        grid-template-columns: 1fr;
+    }
+
+    .skills__category {
+        padding: 24px;
+    }
+}
